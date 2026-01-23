@@ -1,0 +1,71 @@
+body {
+  margin: 0;
+  background: linear-gradient(135deg, #fce7f3, #e0f2fe);
+  font-family: "Poppins", sans-serif;
+}
+
+.app {
+  max-width: 420px;
+  margin: 60px auto;
+  background: white;
+  padding: 25px;
+  border-radius: 20px;
+  box-shadow: 0 25px 50px rgba(0,0,0,0.12);
+}
+
+h1 {
+  text-align: center;
+}
+
+.input {
+  display: flex;
+  gap: 10px;
+}
+
+input {
+  flex: 1;
+  padding: 10px;
+  border-radius: 12px;
+  border: 1px solid #ddd;
+}
+
+button {
+  background: #ec4899;
+  color: white;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.progress {
+  margin: 20px 0;
+}
+
+.bar {
+  background: #eee;
+  height: 8px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.fill {
+  height: 100%;
+  background: #22c55e;
+  transition: width 0.4s;
+}
+
+.todo {
+  background: #f9fafb;
+  padding: 12px;
+  margin-top: 10px;
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.todo.done {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
