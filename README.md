@@ -2,7 +2,7 @@ Live URL:https://vercel.com/hasniyas-projects/todo-mern
 
 OUR React app Starting---->
 in the vs terminal open new terminal write npm start,
-again in the split terminal npm run client
+
 
 ---------------------------------------------------------------------------------
 DevOPS Assignment Project
