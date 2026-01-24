@@ -1,8 +1,8 @@
-name: CI Pipeline
+name: CI - Build & Test
 
 on:
   push:
-    branches: [ main, develop, feature/* ]
+    branches: [ main, develop ]
   pull_request:
     branches: [ main, develop ]
 
@@ -12,21 +12,21 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Setup Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
-          node-version: '18'
+          node-version: 18
 
-      - name: Install dependencies
+      - name: Install backend dependencies
+        working-directory: src/server
         run: npm install
 
-      - name: Lint code
-        run: echo "Lint check skipped"  # or run npm run lint if available
+      - name: Install frontend dependencies
+        working-directory: src/client
+        run: npm install
 
       - name: Build frontend
-        run: npm run build --prefix src/client
-
-      - name: Test backend
-        run: echo "Tests skipped"       # Add npm test if you have tests
+        working-directory: src/client
+        run: npm run build
