@@ -1,15 +1,10 @@
-Live URL:https://vercel.com/hasniyas-projects/todo-mern
+todo_mern  Project
 
-OUR React app Starting---->
-in the vs terminal open new terminal write npm start,
-
-
----------------------------------------------------------------------------------
-DevOPS Assignment Project
 Group Information
-[DEVOPSHasniya Banu] - [ITBIN-2313-0015] - Role: DevOps Engineer
-[Frontend ASNA] - [ITBIN-2313-0010] - Role: Frontend Developer
-[Backend ASRA] - [ITBIN-2313-0011] - Role: Backend Developer
+- **Student 1:** [Hasniya Banu] - [ITBIN-2313-0015] - Role: [DevOps Engineer]
+- **Student 2:** [Full Name as in LMS] - [ITBIN-2313-0010] - Role: [Frontend]
+- **Student 3:** [Full Name as in LMS] - [ITBIN-2313-0011] - Role: [Backend]
+
 
 ## 📌 Project Description
 
@@ -17,7 +12,40 @@ Group Information
 
 The application allows users to **create, update, complete, and delete tasks**, while visually tracking progress through a modern and responsive UI. The project follows **real-world DevOps practices**, including version control, branching strategies, automated CI/CD pipelines, and cloud deployment.
 
----
+Live  Deploymentt URL:https://vercel.com/hasniyas-projects/todo-mern
+
+
+🛠️ Technology Stack
+
+### Frontend
+
+* React.js
+* Axios
+* HTML5, CSS3, JavaScript
+* Deployed on **Vercel**
+
+### Backend
+
+* Node.js
+* Express.js
+* MongoDB
+* Mongoose
+
+### DevOps & Tools
+
+* Git & GitHub
+* GitHub Actions (CI/CD)
+* Vercel (Cloud Deployment)
+* npm
+
+Branch Strategy 
+
+## 🧪 Development Workflow
+
+* `main` → Production-ready code
+* `develop` → Integration branch
+* `feature/*`--> development branches
+
 
 ## 🎯 Project Objectives
 
@@ -41,28 +69,6 @@ The application allows users to **create, update, complete, and delete tasks**, 
 
 -------------------------------------------------------------------------------
 
-## 🛠️ Technology Stack
-
-### Frontend
-
-* React.js
-* Axios
-* HTML5, CSS3, JavaScript
-* Deployed on **Vercel**
-
-### Backend
-
-* Node.js
-* Express.js
-* MongoDB
-* Mongoose
-
-### DevOps & Tools
-
-* Git & GitHub
-* GitHub Actions (CI/CD)
-* Vercel (Cloud Deployment)
-* npm
 
 ------------------------------------------------------------------------------
 
@@ -78,12 +84,7 @@ The application allows users to **create, update, complete, and delete tasks**, 
   * Triggered on every push to the `main` branch
   * Automatically deploys the frontend to **Vercel** using GitHub Actions
 ---------------------------------------------------------------------------------
-
-## 🧪 Development Workflow
-
-* `main` → Production-ready code
-* `develop` → Integration branch
-* `feature/*` → Feature development branches
+ → Feature development branches
 
 This workflow simulates a **real-world DevOps team environment**.
 
