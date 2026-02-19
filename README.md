@@ -3,8 +3,14 @@
  👥 Group Information
 
 Student 1: [Hasniya Banu] – [ITBIN-2313-0015] – Role: DevOps Engineer
+
+
 Student 2: [Fathima Asna Mohamed Rawfeek] – [ITBIN-2313-0010] – Role: Frontend Developer
+
+
 Student 3: [Noordeen Natheera Asra] – [ITBIN-2313-0011] – Role: Backend Developer
+
+
 
 
  
@@ -32,7 +38,7 @@ Todo Charm is a React-based task management application where users can:
 * HTML5, CSS3, JavaScript (ES6+)
 * Git & GitHub
 * GitHub Actions (CI/CD)
-* Vercel / Netlify (Cloud Deployment)
+* Vercel (Cloud Deployment)
 
 
  
