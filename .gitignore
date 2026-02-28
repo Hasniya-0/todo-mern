@@ -1,17 +1,4 @@
-# Node modules
 node_modules/
-
-# Logs
-*.log
-npm-debug.log*
-
-# Build output
+.env
 dist/
 build/
-
-# Environment variables
-.env
-
-# Editor folders
-.vscode/
-.idea/

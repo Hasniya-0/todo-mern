@@ -1,0 +1,25 @@
+services:
+  client:
+    build:
+      context: ./src/client   # not ./client
+      dockerfile: Dockerfile  # make sure Dockerfile is here
+    ports:
+      - "3000:80"
+    depends_on:
+      - server
+
+  server:
+    build:
+      context: ./src/server   # not ./server
+      dockerfile: Dockerfile  # if using one
+    ports:
+      - "5000:5000"
+    environment:
+      - MONGO_URI=mongodb://mongo:27017/tododb
+    depends_on:
+      - mongo
+
+  mongo:
+    image: mongo:7.0
+    ports:
+      - "27017:27017"
