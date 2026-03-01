@@ -211,7 +211,137 @@ Lints code
 ## 👩‍💻 Authors
 
 **Hasniya Banu**
+
 **Fathima Asna Mohamed Rawfeek**
+
 **Noordeen Natheera Asra**
+
 BSc (Hons) in Information Technology
+
 Horizon Campus – Sri Lanka
+
+
+ Dockerized MERN Todo Charm App 🌸
+
+This is a MERN stack Todo app (MongoDB, Express, React, Node.js) fully containerized using Docker and Docker Compose, demonstrating backend, frontend, and database integration.
+
+
+
+**Features**
+
+Add, toggle, and delete todos
+
+Progress bar showing completion percentage
+
+Fully containerized backend, frontend, and MongoDB
+
+Accessible through browser and API
+
+**Prerequisites**
+
+Docker Desktop
+ installed
+
+Optional: Node.js
+ and npm (for local development)
+
+
+ **Project Structure**
+src/
+ ├─ client/                 # React frontend
+ │   ├─ App.js
+ │   ├─ api.js
+ │   ├─ App.css
+ │   └─ Dockerfile
+ ├─ server/                 # Node.js backend
+ │   ├─ server.js
+ │   ├─ config/db.js
+ │   ├─ routes/todoRoutes.js
+ │   ├─ models/todoModel.js
+ │   └─ Dockerfile
+ └─ docker-compose.yml
+
+
+** Docker Setup**
+
+Open terminal in project root and build/run containers:
+
+    docker-compose up --build
+
+
+ **this will create and run three containers:**
+
+Service	Port Mapping
+client	3000 → 80
+server	5000 → 5000
+mongo	27017 → 27017
+
+
+**Verify containers are running:**
+
+    docker ps
+
+
+**Backend API**
+
+Backend is available at http://localhost:5000/api/todos.
+
+GET / → List all todos
+
+POST / → Add new todo ({"text":"your todo"})
+
+PUT /:id → Toggle todo completion
+
+DELETE /:id → Delete todo
+
+Example using PowerShell / curl:
+
+# Get all todos
+    curl http://localhost:5000/api/todos
+
+# Add new todo
+    curl -Method POST -Uri http://localhost:5000/api/todos -Body '{"text":"new todo"}' -ContentType "application/json"
+
+# Toggle todo completion
+    curl -Method PUT http://localhost:5000/api/todos/<todo_id>
+
+# Delete todo
+    curl -Method DELETE http://localhost:5000/api/todos/<todo_id>
+
+
+
+**Frontend**
+
+Frontend runs on http://localhost:3000.
+
+Input box to add a new todo
+
+Click on todo text to toggle completed status
+
+Click 🗑 button to delete a todo
+
+Shows percentage of completed todos in a progress bar
+
+
+
+
+**Environment Variables**
+
+Configured in docker-compose.yml:
+
+environment:
+     MONGO_URI=mongodb://mongo:27017/tododb
+
+Backend connects to MongoDB container using this URI
+
+
+
+### Screenshots
+
+#### Docker Desktop Containers
+![Docker Desktop view](./screenshots/docker-desktop images.pdf)
+
+#### Frontend Running
+![Frontend Todo App](./screenshots/frontend running.pdf)
+
+
