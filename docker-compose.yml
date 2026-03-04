@@ -1,25 +1,33 @@
+version: "3.8"
 services:
   client:
     build:
-      context: ./src/client   # not ./client
-      dockerfile: Dockerfile  # make sure Dockerfile is here
+      context: ./src/client
     ports:
       - "3000:80"
     depends_on:
       - server
+    restart: always
 
   server:
     build:
-      context: ./src/server   # not ./server
-      dockerfile: Dockerfile  # if using one
+      context: ./src/server
     ports:
       - "5000:5000"
-    environment:
-      - MONGO_URI=mongodb://mongo:27017/tododb
+    env_file:
+      - .env      # ✅ Load variables from .env
     depends_on:
       - mongo
+    restart: always
 
   mongo:
     image: mongo:7.0
+    container_name: mongo
     ports:
       - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+    restart: always
+
+volumes:
+  mongo-data:

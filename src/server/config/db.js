@@ -1,11 +1,23 @@
 const mongoose = require("mongoose");
 
 const connectDB = async () => {
-  try {
-    await mongoose.connect("mongodb://127.0.0.1:27017/todoapp");
-    console.log("✅ MongoDB Connected");
-  } catch (err) {
-    console.error(err);
+  const maxRetries = 10; // try 10 times
+  let retries = 0;
+
+  while (retries < maxRetries) {
+    try {
+      await mongoose.connect(process.env.MONGO_URI);
+      console.log("✅ MongoDB Connected");
+      break;
+    } catch (err) {
+      retries++;
+      console.log(`❌ MongoDB Connection Failed (${retries}/${maxRetries}) - retrying in 5s`);
+      await new Promise(res => setTimeout(res, 5000)); // wait 5 seconds
+    }
+  }
+
+  if (retries === maxRetries) {
+    console.error("❌ Could not connect to MongoDB after multiple attempts");
     process.exit(1);
   }
 };
