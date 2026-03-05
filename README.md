@@ -28,7 +28,7 @@ Todo Charm is a React-based task management application where users can:
 
 🌐 Live Deployment
 
-🔗 Live URL: [https://your-todo-charm-url.vercel.app](https://your-todo-charm-url.vercel.app)
+🔗 Live URL: [https://your-todo-charm-url.vercel.app](https://vercel.com/hasniyas-projects/todo-mern_app)
 
 
  
