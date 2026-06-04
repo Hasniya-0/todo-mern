@@ -1,20 +1,16 @@
-# Use official Node.js LTS image
-FROM node:20-alpine
-
-# Set working directory
+# Stage 1: Build
+FROM node:20-alpine AS builder
 WORKDIR /usr/src/app
-
-# Copy package files first for caching
 COPY package*.json ./
-
-# Install dependencies
 RUN npm install --production
-
-# Copy the rest of the server code
 COPY . .
 
-# Expose port
+# Stage 2: Production
+FROM node:20-alpine
+RUN addgroup -S appgroup && adduser -S appuser -G appgroup
+WORKDIR /usr/src/app
+COPY --from=builder /usr/src/app/node_modules ./node_modules
+COPY --from=builder /usr/src/app .
+USER appuser
 EXPOSE 5000
-
-# Start server
 CMD ["node", "server.js"]
